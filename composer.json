@@ -1,0 +1,19 @@
+{
+    "name": "eric-chau/bijective",
+    "description": "Simple bijective function (base(n) encode/decode) for PHP.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Chau",
+            "email": "eriic.chau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jarvis\\Math\\": "src/"
+        }
+    }
+}
