@@ -32,7 +32,6 @@ class Bijective
             return $this->alphabet[0];
         }
 
-        $str = '';
         while (0 < $int) {
             $remainder = $int % $this->base;
             $str = $str . $this->alphabet[$remainder];
