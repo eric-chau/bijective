@@ -13,7 +13,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Jarvis\\Math\\": "src/"
+            "Jarvis\\Math\\": "src/",
+            "Jarvis\\Math\\Tests\\": "tests/"
         }
     }
 }
