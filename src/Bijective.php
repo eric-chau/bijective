@@ -20,6 +20,11 @@ class Bijective
         $this->base = strlen($this->alphabet);
     }
 
+    public function alphabet()
+    {
+        return $this->alphabet;
+    }
+
     /**
      * Encodes integer into its associated string.
      *
@@ -47,12 +52,21 @@ class Bijective
      *
      * @param  string $str
      * @return integer
+     * @throws \LogicException if provided string contains unsupported char.
      */
     public function decode($str)
     {
+        if ($str[0] === $this->alphabet[0]) {
+            throw BijectiveException::onZeroValueAsFirstChar($this);
+        }
+
         $int = 0;
         foreach (str_split($str) as $char) {
-            $int = ($int * $this->base) + strpos($this->alphabet, $char);
+            if (false === $pos = strpos($this->alphabet, $char)) {
+                throw BijectiveException::onUnsupportedChar($this, $char);
+            }
+
+            $int = ($int * $this->base) + $pos;
         }
 
         return $int;
